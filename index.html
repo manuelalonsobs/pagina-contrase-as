@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Generador de contraseñas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Generador de Contraseñas</h1>
+    <a href="https://www.instagram.com/manuel_2.00.6?igsh=NWFpODQ4dWt0Mjhs">Mi perfil</a>
+    <div>
+        <label for="length">Longitud de la Contraseña:</label>
+        <input type="number" id="length" min="6" max="20" value="12">
+        <button onclick="generatePassword()">Generar Contraseña</button>
+    </div>
+    <div id="password"></div>
+
+    <script>
+        function generatePassword() {
+            var length = document.getElementById("length").value;
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            document.getElementById("password").innerText = "Contraseña generada: " + password;
+        }
+    </script>
+    <img class="nube" src="nubes.png" title="nube">
+    <img class="marciano" src="marciano en ovni.png" title="marciano">
+    <img class="edificio" src="edificio.png" title="edificios">
+    
+ 
+</body>
+</html>
